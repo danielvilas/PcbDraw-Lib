@@ -69,7 +69,9 @@ def plotTopLayers(board):
             ("edge", [pcbnew.Edge_Cuts], process),
             ("silk", [pcbnew.F_SilkS], process)]
     elements = pcbdraw.get_layers(board, colors, {}, plotPlan)
-    elements.attrib["id"] = "KiCAD footprint top"
+    elements.attrib["id"] = "KicadTop"
+    #elements.attrib["inkscape:groupmode"]="layer"
+    #elements.attrib["inkscape:label"]="KiCAD footprint top" 
     return elements
 
 def plotBottomLayers(board):
@@ -93,7 +95,9 @@ def plotBottomLayers(board):
             ("edge", [pcbnew.Edge_Cuts], process),
             ("silk", [pcbnew.B_SilkS], process)]
     elements = pcbdraw.get_layers(board, colors, {}, plotPlan)
-    elements.attrib["id"] = "KiCAD footprint bottom"
+    elements.attrib["id"] = "KicadBottom"
+    #elements.attrib["inkscape:groupmode"]="layer"
+    #elements.attrib["inkscape:label"]="KiCAD footprint bottom" 
     return elements
 
 def addOrigin(document):
